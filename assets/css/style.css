@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* General container for the product layout card  */
+.product-container {
+  max-width: 260px;
+  padding: 20px;
+  margin: auto;
+  align-items: center;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.185);
+  background-color: rgba(255, 0, 0, 0.123);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 10px;
+}
+
+header {
+  text-transform: uppercase;
+}
+
+.product-description {
+  color: rgba(0, 0, 0, 0.511);
+  margin-top: 5px;
+  font-size: 0.7rem;
+}
+
+/* images of adidas shoe */
+.product-img {
+  margin-top: 10px;
+}
+
+/* container for picking color */
+.product-colors {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.product-colors a {
+  border-radius: 100%;
+  text-decoration: none;
+  padding: 5px 5px;
+  margin-top: 10px;
+  /* border: 5px; */
+}
+/* Different color options for product */
+.color-1 {
+  background-color: rgba(255, 0, 0, 0.632);
+  color: rgba(255, 0, 0, 0.632);
+  /* Show the product color chosen */
+  border: 2px solid rgb(63, 63, 63);
+}
+.color-2 {
+  background-color: rgba(0, 0, 255, 0.632);
+  color: rgba(0, 0, 255, 0.632);
+}
+.color-3 {
+  background-color: green;
+  color: green;
+}
+.color-4 {
+  background-color: rgb(202, 202, 202);
+  color: rgb(202, 202, 202);
+}
+.color-5 {
+  background-color: black;
+  color: black;
+}
+
+/* price and add to cart button */
+.purshare {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.add-to-cart {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.511);
+  border-radius: 50px;
+}
+
+.add-to-cart:hover {
+  background-color: rgba(255, 255, 60, 0.584);
+}
