@@ -6,21 +6,33 @@ function getProducts() {
 }
 
 // const containerElement = document.querySelector(".product-container");
-const productTitle = document.querySelector(".product-title");
-const productPrice = document.querySelector(".product-price");
-const productDescription = document.querySelector(".product-description");
-const productImg = document.querySelector("product-img");
+const containerElement = document.querySelector("#products");
 
 function addProductTooDom(products) {
-  // const productElement = document.createElement("div");
-  const containerElement = document.querySelector(".product-container");
-  containerElement.classList.add("product");
-  productTitle.innerHTML = ` ${products.title}`;
-  productPrice.innerHTML = ` $${products.price}`;
-  productDescription.innerHTML = ` ${products.description}`;
-  //   productImg.innerText = ` ${product.thumbnail}`;
+  const productElement = document.createElement("div");
 
-  // containerElement.appendChild(productElement);
+  productElement.classList.add("product");
+
+  productElement.innerHTML = `
+  <header>
+          <h2 class="product-title">${products.title}</h2>
+          <p class="product-description">${products.description}</p>
+        </header>
+        <img
+          class="product-img"
+          src="${products.thumbnail}"
+          alt="${products.title}"
+        />
+
+        <section class="purshare">
+          <p class="product-price">$${products.price}</p>
+          <a class="add-to-cart" href="index.html">Add to cart</a>
+        </section>
+  
+  
+  `;
+
+  containerElement.appendChild(productElement);
 }
 
 getProducts().then((data) => {
