@@ -26,10 +26,12 @@ function createShoppingCart() {
       saveCart();
     },
 
+    // Metode to empty shopping cart
     setEmptyCart: function () {
       cart.cartItems = [];
       saveCart();
     },
+
     // Metode to increase the quantity of an item in the shopping cart
     increaseCartQuantity: function (id, price, title) {
       // Find the existing item in the cart
