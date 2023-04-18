@@ -26,7 +26,7 @@ function addProductTooDom(products) {
 
         <section class="purshare">
           <p class="product-price">$${products.price}</p>
-          <a class="add-to-cart" href="index.html">Add to cart</a>
+          <button onclick="getStorage('${products.id}', '${products.title}')" class="add-to-cart">Add to cart</button>
         </section>
   
   
