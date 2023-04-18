@@ -18,10 +18,16 @@ function createShoppingCart() {
       return cart.cartItems;
     },
 
+    // Metode to remove item from shopping cart
     setDeleteItem: function (id) {
       cart.cartItems = cart.cartItems.filter(function (item) {
         return item.id !== id;
       });
+      saveCart();
+    },
+
+    setEmptyCart: function () {
+      cart.cartItems = [];
       saveCart();
     },
     // Metode to increase the quantity of an item in the shopping cart
