@@ -27,8 +27,8 @@ function addProductTooDom(products) {
         <section class="purshare">
           <p class="product-price">$${products.price}</p>
           <button onclick="shoppingCart.increaseCartQuantity(${products.id}, '${products.title}', ${products.price})" class="add-to-cart">Add to cart</button>
+          <button onclick="shoppingCart.setDeleteItem(${products.id})" class="add-to-cart">Delete</button>
         </section>
-  
   
   `;
 

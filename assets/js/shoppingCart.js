@@ -17,6 +17,13 @@ function createShoppingCart() {
     getCartItems: function () {
       return cart.cartItems;
     },
+
+    setDeleteItem: function (id) {
+      cart.cartItems = cart.cartItems.filter(function (item) {
+        return item.id !== id;
+      });
+      saveCart();
+    },
     // Metode to increase the quantity of an item in the shopping cart
     increaseCartQuantity: function (id, price, title) {
       // Find the existing item in the cart
