@@ -26,7 +26,7 @@ function addProductTooDom(products) {
 
         <section class="purshare">
           <p class="product-price">$${products.price}</p>
-          <button onclick="getStorage('${products.id}', '${products.title}')" class="add-to-cart">Add to cart</button>
+          <button onclick="getStorage(${products.id}, '${products.title}')" class="add-to-cart">Add to cart</button>
         </section>
   
   
@@ -36,7 +36,7 @@ function addProductTooDom(products) {
 }
 
 getProducts().then((data) => {
-  console.log(data);
+  console.log("product data", data);
   data.products.map((product) => {
     addProductTooDom(product);
   });
