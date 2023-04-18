@@ -1,25 +1,26 @@
 function getProducts() {
-  return fetch("https://dummyjson.com/products?limit=1")
+  return fetch("https://dummyjson.com/products")
     .then((response) => response.json())
     .then((data) => data)
     .catch((error) => console.error(error));
 }
 
-const containerElement = document.querySelector(".product-container");
+// const containerElement = document.querySelector(".product-container");
 const productTitle = document.querySelector(".product-title");
 const productPrice = document.querySelector(".product-price");
 const productDescription = document.querySelector(".product-description");
 const productImg = document.querySelector("product-img");
 
-function addProductTooDom(product) {
-  const productElement = document.createElement("div");
-  productElement.classList.add("product");
-  productTitle.innerHTML = ` ${product.title}`;
-  productPrice.innerHTML = ` $${product.price}`;
-  productDescription.innerHTML = ` ${product.description}`;
+function addProductTooDom(products) {
+  // const productElement = document.createElement("div");
+  const containerElement = document.querySelector(".product-container");
+  containerElement.classList.add("product");
+  productTitle.innerHTML = ` ${products.title}`;
+  productPrice.innerHTML = ` $${products.price}`;
+  productDescription.innerHTML = ` ${products.description}`;
   //   productImg.innerText = ` ${product.thumbnail}`;
 
-  containerElement.appendChild(productElement);
+  // containerElement.appendChild(productElement);
 }
 
 getProducts().then((data) => {
