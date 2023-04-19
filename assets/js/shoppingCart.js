@@ -49,7 +49,38 @@ function createShoppingCart() {
       // Save the changes to the cart
       saveCart();
     },
+
+    // Metode to decrease quantity of an item in the shopping cart
+    decreaseCartQuantity: function (id, price, title) {
+      // Find the existing item in the cart
+      let exisitingItem = cart.cartItems.find(function (item) {
+        return item.id === id;
+      });
+
+      if (exisitingItem) {
+        // If the item already exist in the cart, increase its quantity
+        exisitingItem.amount -= 1;
+      } else {
+        // If the item does not exist in the cart, add it
+        cart.cartItems.pop({
+          id: id,
+          price: price,
+          amount: 1,
+          title: title,
+        });
+      }
+      // Save the changes to the cart
+      saveCart();
+    },
   };
 }
 
 const shoppingCart = createShoppingCart();
+
+console.log("cartitems", shoppingCart.getCartItems());
+
+// const array = [1, 2, 3, 4];
+
+const displayItemInCart = JSON.stringify(shoppingCart.getCartItems());
+
+document.querySelector("#display-items-cart").innerHTML = displayItemInCart;

@@ -10,3 +10,16 @@ function parseStorage() {
 
   console.log(name);
 }
+
+// localStorage notes
+
+/* const obj = [
+  { name: "John", age: 38, city: "New York" },
+  { name: "Sissi", age: 30, city: "Rønne" },
+];
+
+const myJSON = localStorage.setItem("students", JSON.stringify(obj));
+
+const initialJSON = JSON.parse(localStorage.getItem("students"));
+
+console.log(initialJSON); */

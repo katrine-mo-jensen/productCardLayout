@@ -5,6 +5,34 @@ function getProducts() {
     .catch((error) => console.error(error));
 }
 
+// cart
+const shoppingCartcontainer = document.querySelector("#cart");
+
+function shopping(products) {
+  const shoppingElement = document.createElement("div");
+
+  shoppingElement.classList.add("shopping");
+
+  shoppingElement.innerHTML = `
+  <header>
+  <h2>Shopping cart</h2>
+  <p>Everything in your shopping cart currently is</p>
+</header>
+<section id="display-items-cart"> 
+
+  <button onclick="()">+</button>
+  <button onclick="shoppingCart.decreaseCartQuantity(${products.id})">-</button>
+</section
+<footer>
+  <button onclick="shoppingCart.setEmptyCart(${products.id})">
+    Remove everything
+  </button>
+</footer>
+  `;
+
+  shoppingCartcontainer.appendChild(shoppingElement);
+}
+shopping(products);
 // const containerElement = document.querySelector(".product-container");
 const containerElement = document.querySelector("#products");
 
@@ -15,9 +43,9 @@ function addProductTooDom(products) {
 
   productElement.innerHTML = `
   <header>
-          <h2 class="product-title">${products.title}</h2>
-          <p class="product-description">${products.description}</p>
-        </header>
+      <h2 class="product-title">${products.title}</h2>
+      <p class="product-description">${products.description}</p>
+  </header>
         <img
           class="product-img"
           src="${products.thumbnail}"
@@ -27,7 +55,7 @@ function addProductTooDom(products) {
         <footer class="purshare">
           <p class="product-price">$${products.price}</p>
           <button onclick="shoppingCart.increaseCartQuantity(${products.id}, '${products.title}', ${products.price})" class="add-to-cart">Add to cart</button>
-          <button onclick="shoppingCart.setDeleteItem(${products.id})" class="add-to-cart">Delete</button>
+          
         </footer>
   
   `;
