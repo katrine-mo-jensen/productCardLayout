@@ -1,7 +1,10 @@
 function getProducts() {
   return fetch("https://dummyjson.com/products")
     .then((response) => response.json())
-    .then((data) => data)
+    .then((data) => {
+      console.log(data);
+      
+
     .catch((error) => console.error(error));
 }
 
@@ -11,7 +14,7 @@ const shoppingCartcontainer = document.querySelector("#cart");
 function shopping(products) {
   const shoppingElement = document.createElement("div");
 
-  shoppingElement.classList.add("shopping");
+  // shoppingElement.classList.add("shopping");
 
   shoppingElement.innerHTML = `
   <header>
