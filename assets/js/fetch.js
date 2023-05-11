@@ -14,7 +14,7 @@ const shoppingCartcontainer = document.querySelector("#cart");
 function shopping(products) {
   const shoppingElement = document.createElement("div");
 
-  // shoppingElement.classList.add("shopping");
+  shoppingElement.classList.add("shopping");
 
   shoppingElement.innerHTML = `
   <header>
